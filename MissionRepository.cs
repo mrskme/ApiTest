@@ -15,5 +15,12 @@ namespace ApiTest
             var sql = "SELECT * FROM missions";
             return await connection.QueryAsync<Mission>(sql);
         }
+
+        public async Task<IEnumerable<int>> Create(Mission mission)
+        {
+            var connection = ConnectionFactory.Create();
+            var sql = "INSERT INTO missions (title, text) VALUES (@Title, @Text)";
+            return await connection.QueryAsync<int>(sql, mission);
+        }
     }
 }

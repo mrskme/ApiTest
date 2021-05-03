@@ -33,12 +33,13 @@ namespace ApiTest.Controllers
         //{
         //    return await Task.Run(() => _data.OneById(id));
         //}
-        
-        //[HttpPost]
-        //public async Task<int>  Create(Mission mission)
-        //{
-        //    return await Task.Run(() => 1);
-        //}
+
+        [HttpPost]
+        public async Task<IEnumerable<int>> Create(Mission mission)
+        {
+            var missionRepository = new MissionRepository();
+            return await missionRepository.Create(mission);
+        }
         //[HttpPut]
         //public async Task<int> Edit(Mission mission)
         //{

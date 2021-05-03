@@ -15,7 +15,7 @@
 
     writeData();
     async function writeData() {
-        const response = await axios.post('/api/mission', { id: 1, name: 'Eirik', email: 'mrskme@hotmail.no' });
+        const response = await axios.post('/api/mission', { Title: "haha", Text: "hehe" });
         console.log(response);
     }
 
