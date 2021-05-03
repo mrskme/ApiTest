@@ -12,7 +12,7 @@ namespace ApiTest.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<Person> Get(int id)
         {
             return await Task.Run(() => 
@@ -26,14 +26,14 @@ namespace ApiTest.Controllers
                 new Person() {Id = 2, Email = "Pål@hotmail.no", Name = "Pål"},
             });
         }
-
+        [HttpPost]
         public async Task<int>  Create(Person person)
         {
             return await Task.Run(() => 1);
         }
-        public int Delete(int id)
+        public async Task<int> Delete(int id)
         {
-            return 1;
+            return await Task.Run(() => 1);
         }
     } 
 }
