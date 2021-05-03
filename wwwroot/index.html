@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<script>
+    getData();
+    async function getData() {
+        const response = await axios.get('/api/mission');
+        console.log(response.data);
+    }
+
+    writeData();
+    async function writeData() {
+        const response = await axios.post('/api/mission', { id: 1, name: 'Eirik', email: 'mrskme@hotmail.no' });
+        console.log(response);
+    }
+
+</script>
+</body>
+</html>
